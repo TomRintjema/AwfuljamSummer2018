@@ -2397,7 +2397,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8100,7 +8100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustSpeed: 1000
-  rotSpeed: 500
+  rotSpeed: 800
   engineParticleR: {fileID: 1921925388}
   engineParticleL: {fileID: 1122754055}
 --- !u!50 &1458056782
@@ -9411,7 +9411,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
