@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour {
     Rigidbody2D rb;
     public float thrustSpeed = .05f;
     public float rotSpeed = 1f;
+    public ParticleSystem engineParticleR;
+    public ParticleSystem engineParticleL;
 
     // Use this for initialization
     void Start () {
@@ -15,9 +17,13 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        engineParticleL.Stop();
+        engineParticleR.Stop();
         if (Input.GetButton("Thrust"))
         {
             Thrust(1);
+            engineParticleL.Play();
+            engineParticleR.Play();
         //} else if (Input.GetKey(KeyCode.S)) {
         //    Thrust(-1);
         }
@@ -26,9 +32,11 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetButton("RotateLeft"))
         {
             Rotate(1);
+            engineParticleR.Play();
         } else if (Input.GetButton("RotateRight"))
         {
             Rotate(-1);
+            engineParticleL.Play();
         }
 	}
 
