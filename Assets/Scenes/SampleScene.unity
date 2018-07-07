@@ -368,9 +368,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 1
-  m_GravityScale: 1
+  m_LinearDrag: 0.5
+  m_AngularDrag: 10
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5e22944c2dfbe44999077e95a3a647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustSpeed: 1000
-  rotSpeed: 200
+  thrustSpeed: 2000
+  rotSpeed: 500
 --- !u!1 &1927511408
 GameObject:
   m_ObjectHideFlags: 0
