@@ -14,19 +14,19 @@ public class PlayerScript : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey(KeyCode.W))
+	void FixedUpdate () {
+        if (Input.GetButton("Thrust"))
         {
             Thrust(1);
-        } else if (Input.GetKey(KeyCode.S)) {
-            Thrust(-1);
+        //} else if (Input.GetKey(KeyCode.S)) {
+        //    Thrust(-1);
         }
 
 
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetButton("RotateLeft"))
         {
             Rotate(1);
-        } else if (Input.GetKey(KeyCode.D))
+        } else if (Input.GetButton("RotateRight"))
         {
             Rotate(-1);
         }
