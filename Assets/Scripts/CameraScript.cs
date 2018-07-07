@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour {
     GameObject playerShip;
 
-
 	// Use this for initialization
 	void Start () {
         playerShip = GameObject.FindWithTag("Player");
