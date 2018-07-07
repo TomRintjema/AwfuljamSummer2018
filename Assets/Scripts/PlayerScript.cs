@@ -34,13 +34,17 @@ public class PlayerScript : MonoBehaviour {
 
     void Thrust(int direction)
     {
-        Vector3 vel = rb.velocity;
+        /*Vector3 vel = rb.velocity;
         vel += gameObject.transform.up * thrustSpeed * direction;
-        rb.velocity = vel;
+        rb.velocity = vel;*/
+
+        rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
     }
 
     void Rotate(int direction)
     {
-        transform.Rotate(Vector3.forward * Time.deltaTime * direction * rotSpeed);
+        //transform.Rotate(Vector3.forward * Time.deltaTime * direction * rotSpeed);
+
+        rb.AddTorque(direction * rotSpeed * Time.deltaTime);
     }
 }
