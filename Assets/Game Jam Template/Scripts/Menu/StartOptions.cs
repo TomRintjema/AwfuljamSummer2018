@@ -109,9 +109,8 @@ public class StartOptions : MonoBehaviour {
 
 	public void StartGameInScene()
 	{
-		//Pause button now works if escape is pressed since we are no longer in Main menu.
-		inMainMenu = false;
-        Time.timeScale = 1;
+        //Pause button now works if escape is pressed since we are no longer in Main menu.
+        inMainMenu = false;
 
         //If there is a second music clip in MenuSettings, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic 
         if (menuSettingsData.musicLoopToChangeTo != null) 
