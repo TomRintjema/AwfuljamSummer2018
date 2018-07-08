@@ -9,15 +9,31 @@ internal class HookScript : MonoBehaviour {
 
     public void ReleaseHook()
     {
+        if (heldBox == null)
+        {
+            if (!hooking)
+            {
+                Debug.Log("Hook Armed");
+                hooking = true;
+            } else
+            {
+                Debug.Log("Hook Disarmed");
+                hooking = false;
+            }
+
+        }
+
         if (heldBox != null)
         {
-            hooking = true;
             heldBox.transform.parent = null;
             gameObject.GetComponent<FixedJoint2D>().connectedBody = null;
             gameObject.GetComponent<FixedJoint2D>().enabled = false;
             heldBox = null;
+            Debug.Log("Hook detached, Ready to arm");
         }
     }
+
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,6 +47,7 @@ internal class HookScript : MonoBehaviour {
                 heldBox.transform.parent = gameObject.transform;
                 gameObject.GetComponent<FixedJoint2D>().connectedBody = heldBox.GetComponent<Rigidbody2D>();
                 gameObject.GetComponent<FixedJoint2D>().enabled = true;
+                Debug.Log("Hook grabbed something!");
             }
         }
     }

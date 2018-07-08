@@ -42,18 +42,13 @@ public class PlayerScript : MonoBehaviour {
         {
             Rotate(-1);
         }
+	}
 
+    private void Update()
+    {
         if (Input.GetButtonDown("FireGrappler"))
         {
-            grappleOut = !grappleOut;
-            if (grappleOut == true)
-            {
-                Debug.Log("Fired Grappler");
-            } else
-            {
-                Debug.Log("Returned Grappler");
-                hook.GetComponent<HookScript>().ReleaseHook();
-            }
+            hook.GetComponent<HookScript>().ReleaseHook();
         }
 
         if (Input.GetButton("LowerGrappler"))
@@ -71,7 +66,7 @@ public class PlayerScript : MonoBehaviour {
                 Debug.Log("Grappler Up");
             }
         }
-	}
+    }
 
     void Thrust(int direction)
     {
