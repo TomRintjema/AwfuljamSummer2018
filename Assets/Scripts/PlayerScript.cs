@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
     Rigidbody2D rb;
-    public float thrustSpeed = .05f;
-    public float rotSpeed = 1f;
+    public float thrustSpeed;
+    public float rotSpeed;
     public float maxFuel;
     public float currentFuel;
     public float rofThrust; //Rate of fuel loss on thrusting
     public float rofRot; //Rate of fuel loss on rotating
     public ParticleSystem engineParticleR;
     public ParticleSystem engineParticleL;
+    bool grappleOut = false; //If the grapple is out or not.
+    public GameObject clawPrefab;
+    public float hitStrength;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-
     }
 	
 	// Update is called once per frame
@@ -38,6 +40,34 @@ public class PlayerScript : MonoBehaviour {
         {
             Rotate(-1);
         }
+
+        if (Input.GetButtonDown("FireGrappler"))
+        {
+            grappleOut = !grappleOut;
+            if (grappleOut == true)
+            {
+                Debug.Log("Fired Grappler");
+            } else
+            {
+                Debug.Log("Returned Grappler");
+            }
+        }
+
+        if (Input.GetButton("LowerGrappler"))
+        {
+            if (grappleOut)
+            {
+                Debug.Log("Grappler Down");
+            }
+        }
+
+        if (Input.GetButton("RaiseGrappler"))
+        {
+            if (grappleOut)
+            {
+                Debug.Log("Grappler Up");
+            }
+        }
 	}
 
     void Thrust(int direction)
@@ -57,6 +87,9 @@ public class PlayerScript : MonoBehaviour {
             {
                 currentFuel = 0;
             }
+        } else
+        {
+            //Tom put your L & R "No fuel" smokey thing here
         }
     }
 
@@ -80,6 +113,29 @@ public class PlayerScript : MonoBehaviour {
             {
                 currentFuel = 0;
             }
+        } else
+        {
+            if (direction > 0)
+            {
+                //Tom put your R "No fuel" smokey thing here
+            }
+            else if (direction < 0)
+            {
+                //Tom put your L "No fuel" smokey thing here
+            }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.relativeVelocity.magnitude > hitStrength)
+        {
+            Kaboom();
+        }
+    }
+
+    void Kaboom()
+    {
+        Debug.Log("YOU DEAD NOW!");
     }
 }
