@@ -19,4 +19,14 @@ public class BoxCheckerScript : MonoBehaviour {
             }
         }
     }
+    void OnTriggerExit2D (Collider2D other)
+    {
+        if (other.gameObject.tag == "Box")
+        {
+            if (other.gameObject.GetComponent<ContainerScript>().locked == true)
+            {
+                other.gameObject.GetComponent<ContainerScript>().locked = false;
+            }
+        }
+    }
 }

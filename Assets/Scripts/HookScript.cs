@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HookScript : MonoBehaviour {
+internal class HookScript : MonoBehaviour {
     GameObject ship;
+    GameObject heldBox;
     public bool hooking = true;
 
+    public void ReleaseHook()
+    {
+        if (heldBox != null)
+        {
+            hooking = true;
+            heldBox.transform.parent = null;
+            gameObject.GetComponent<FixedJoint2D>().connectedBody = null;
+            gameObject.GetComponent<FixedJoint2D>().enabled = false;
+            heldBox = null;
+        }
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,10 +26,11 @@ public class HookScript : MonoBehaviour {
         {
             if (collision.gameObject.tag == "Box")
             {
-                GameObject box = collision.gameObject;
-                box.transform.parent = gameObject.transform;
-                gameObject.GetComponent<DistanceJoint2D>().connectedBody = box.GetComponent<Rigidbody2D>();
-                gameObject.GetComponent<DistanceJoint2D>().enabled = true;
+                hooking = false;
+                heldBox = collision.gameObject;
+                heldBox.transform.parent = gameObject.transform;
+                gameObject.GetComponent<FixedJoint2D>().connectedBody = heldBox.GetComponent<Rigidbody2D>();
+                gameObject.GetComponent<FixedJoint2D>().enabled = true;
             }
         }
     }

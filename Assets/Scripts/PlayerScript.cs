@@ -12,13 +12,15 @@ public class PlayerScript : MonoBehaviour {
     public float rofRot; //Rate of fuel loss on rotating
     public ParticleSystem engineParticleR;
     public ParticleSystem engineParticleL;
-    bool grappleOut = false; //If the grapple is out or not.
+    public bool grappleOut = false; //If the grapple is out or not.
     public GameObject clawPrefab;
     public float hitStrength;
+    public GameObject hook;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        hook = GameObject.FindGameObjectWithTag("Hook");
     }
 	
 	// Update is called once per frame
@@ -50,6 +52,7 @@ public class PlayerScript : MonoBehaviour {
             } else
             {
                 Debug.Log("Returned Grappler");
+                hook.GetComponent<HookScript>().ReleaseHook();
             }
         }
 
