@@ -81381,6 +81381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrustSpeed: 1000
   rotSpeed: 800
+  maxFuel: 1000
+  currentFuel: 1000
+  rofThrust: 2
+  rofRot: 1
   engineParticleR: {fileID: 1921925388}
   engineParticleL: {fileID: 1122754055}
 --- !u!50 &1458056782

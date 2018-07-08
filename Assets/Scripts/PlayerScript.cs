@@ -6,6 +6,10 @@ public class PlayerScript : MonoBehaviour {
     Rigidbody2D rb;
     public float thrustSpeed = .05f;
     public float rotSpeed = 1f;
+    public float maxFuel;
+    public float currentFuel;
+    public float rofThrust; //Rate of fuel loss on thrusting
+    public float rofRot; //Rate of fuel loss on rotating
     public ParticleSystem engineParticleR;
     public ParticleSystem engineParticleL;
 
@@ -22,8 +26,6 @@ public class PlayerScript : MonoBehaviour {
         if (Input.GetButton("Thrust"))
         {
             Thrust(1);
-            engineParticleL.Play();
-            engineParticleR.Play();
         //} else if (Input.GetKey(KeyCode.S)) {
         //    Thrust(-1);
         }
@@ -32,11 +34,9 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetButton("RotateLeft"))
         {
             Rotate(1);
-            engineParticleR.Play();
         } else if (Input.GetButton("RotateRight"))
         {
             Rotate(-1);
-            engineParticleL.Play();
         }
 	}
 
@@ -45,14 +45,41 @@ public class PlayerScript : MonoBehaviour {
         /*Vector3 vel = rb.velocity;
         vel += gameObject.transform.up * thrustSpeed * direction;
         rb.velocity = vel;*/
+        if (currentFuel > 0)
+        {
+            currentFuel -= rofThrust;
+            rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
+            engineParticleL.Play();
+            engineParticleR.Play();
 
-        rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
+
+            if (currentFuel < 0)
+            {
+                currentFuel = 0;
+            }
+        }
     }
 
     void Rotate(int direction)
     {
         //transform.Rotate(Vector3.forward * Time.deltaTime * direction * rotSpeed);
+        if (currentFuel > 0)
+        {
+            currentFuel -= rofRot;
+            rb.AddTorque(direction * rotSpeed * Time.deltaTime);
+            if (direction > 0)
+            {
+                engineParticleR.Play();
+            }
+            else if (direction < 0)
+            {
+                engineParticleL.Play();
+            }
 
-        rb.AddTorque(direction * rotSpeed * Time.deltaTime);
+            if (currentFuel < 0)
+            {
+                currentFuel = 0;
+            }
+        }
     }
 }
