@@ -8,6 +8,8 @@ public class CameraZoomer : MonoBehaviour
     public float zoomInSize = 5f;
     public float zoomOutSize = 10f;
     public float checkDistance = 1f;
+    public float smoothingTime = 3f;
+    private float vel;
 
     // Use this for initialization
     void Start()
@@ -23,11 +25,11 @@ public class CameraZoomer : MonoBehaviour
         hit = Physics2D.Raycast(this.transform.position, -Vector2.up, checkDistance, layerMask);
         if (hit.collider != null)
         {
-            mainCamera.orthographicSize = zoomInSize;
+            mainCamera.orthographicSize = Mathf.SmoothDamp(mainCamera.orthographicSize, zoomInSize + hit.distance, ref vel, smoothingTime) ;
         }
         else
         {
-            mainCamera.orthographicSize = zoomOutSize;
+            mainCamera.orthographicSize = Mathf.SmoothDamp(mainCamera.orthographicSize, zoomOutSize, ref vel, smoothingTime);
         }
 
     }
