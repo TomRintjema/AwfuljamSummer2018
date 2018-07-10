@@ -1,11 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 internal class HookScript : MonoBehaviour {
     GameObject ship;
     GameObject heldBox;
+    GameObject hookDisplay;
+    Text hookDisplayText;
     public bool hooking = true;
+    
+    private void Start()
+    {
+        hookDisplay = GameObject.FindWithTag("HookHudText");
+        hookDisplayText = hookDisplay.GetComponent(typeof(Text)) as Text;
+        hookDisplayText.text = "Armed";
+    }
 
     public void ArmDisarm()
     {
@@ -15,10 +25,13 @@ internal class HookScript : MonoBehaviour {
             {
                 Debug.Log("Hook Armed");
                 hooking = true;
+                hookDisplayText.text = "Armed";
             } else
             {
                 Debug.Log("Hook Disarmed");
                 hooking = false;
+                hookDisplayText.text = "Disarmed";
+                
             }
 
         }
@@ -30,6 +43,7 @@ internal class HookScript : MonoBehaviour {
             gameObject.GetComponent<FixedJoint2D>().enabled = false;
             heldBox = null;
             Debug.Log("Hook detached, Ready to arm");
+            hookDisplayText.text = "Disarmed";
         }
     }
 
@@ -48,6 +62,7 @@ internal class HookScript : MonoBehaviour {
                 gameObject.GetComponent<FixedJoint2D>().connectedBody = heldBox.GetComponent<Rigidbody2D>();
                 gameObject.GetComponent<FixedJoint2D>().enabled = true;
                 Debug.Log("Hook grabbed something!");
+                hookDisplayText.text = "Latched";
             }
         }
     }
