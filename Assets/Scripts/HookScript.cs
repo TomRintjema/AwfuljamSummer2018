@@ -7,7 +7,7 @@ internal class HookScript : MonoBehaviour {
     GameObject heldBox;
     public bool hooking = true;
 
-    public void ReleaseHook()
+    public void ArmDisarm()
     {
         if (heldBox == null)
         {
