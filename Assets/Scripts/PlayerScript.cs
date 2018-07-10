@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
     Rigidbody2D rb;
@@ -19,9 +20,14 @@ public class PlayerScript : MonoBehaviour {
     List<GameObject> chainLinkList = new List<GameObject>();
     GameObject heldHook;
 
+    //Hud Hooks
+    public Text fuelText;
+    public Text velocityText;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        UpdateFuelText(currentFuel);
     }
 	
 	// Update is called once per frame
@@ -61,6 +67,12 @@ public class PlayerScript : MonoBehaviour {
         {
             RaiseGrappler();
         }
+
+        float velocityReadout = Vector2.Distance(Vector2.zero, rb.velocity);
+        velocityReadout *= 100f;
+        velocityReadout = Mathf.Round(velocityReadout);
+        //velocityReadout *= 0.1f;
+        UpdateVelocityText(velocityReadout);
     }
 
     void Thrust(int direction)
@@ -71,6 +83,7 @@ public class PlayerScript : MonoBehaviour {
         if (currentFuel > 0)
         {
             currentFuel -= rofThrust;
+            UpdateFuelText(currentFuel);
             rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
             engineParticleL.Play();
             engineParticleR.Play();
@@ -79,6 +92,7 @@ public class PlayerScript : MonoBehaviour {
             if (currentFuel < 0)
             {
                 currentFuel = 0;
+                UpdateFuelText(currentFuel);
             }
         } else
         {
@@ -235,5 +249,15 @@ public class PlayerScript : MonoBehaviour {
     {
         Destroy(heldHook);
         heldHook = null;
+    }
+
+    void UpdateFuelText(float number)
+    {
+        fuelText.text = "" + number;
+    }
+
+    void UpdateVelocityText(float number)
+    {
+        velocityText.text = "" + number;
     }
 }
