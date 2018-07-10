@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour {
     public float hitStrength;
     public GameObject chainLinkPrefab;
     public GameObject hookPrefab;
+    public GameObject hookPosition;
     public int maxLinkLength;
     List<GameObject> chainLinkList = new List<GameObject>();
     GameObject heldHook;
@@ -160,17 +161,13 @@ public class PlayerScript : MonoBehaviour {
         //If the hook is not out, make it fire out and give it like 3 chain links
         if (heldHook == null)
         {
-            //Fire the grappler
-            //First, Make the hook
-            Vector2 hookPosition = new Vector2(0, 4.985f);
-            heldHook = (GameObject)Instantiate(hookPrefab, hookPosition, Quaternion.identity);
             //Make three chain links, separate them by some units
             //Add each of the chain links to the chain link list
             int numberLinkToCreate = 3;
             for (int i = 0; i < numberLinkToCreate; i++) { 
-                GameObject tempChainLink = Instantiate(chainLinkPrefab, hookPosition, Quaternion.identity) as GameObject;
+                GameObject tempChainLink = Instantiate(chainLinkPrefab, hookPosition.transform.position, Quaternion.identity) as GameObject;
                 Debug.Log("Made a link");
-                tempChainLink.GetComponent<DistanceJoint2D>().enabled = true;
+                tempChainLink.GetComponent<HingeJoint2D>().enabled = true;
                 chainLinkList.Add(tempChainLink);
             }
             //Make the chain links enable their hinge joint
@@ -179,13 +176,18 @@ public class PlayerScript : MonoBehaviour {
             foreach (GameObject chain in chainLinkList)
             {
                 chain.transform.parent = lastLink.transform.parent;
-                chain.GetComponent<DistanceJoint2D>().connectedBody = lastLink.GetComponent<Rigidbody2D>();
+                chain.GetComponent<HingeJoint2D>().connectedBody = lastLink.GetComponent<Rigidbody2D>();
                 lastLink = chain;
             }
 
+
+            //Fire the grappler
+            //First, Make the hook
+            heldHook = (GameObject)Instantiate(hookPrefab, hookPosition.transform.position, Quaternion.identity);
+
             //Hook the hook to the lowest chain link
-            heldHook.GetComponent<DistanceJoint2D>().enabled = true;
-            heldHook.GetComponent<DistanceJoint2D>().connectedBody = chainLinkList[chainLinkList.Count-1].GetComponent<Rigidbody2D>();
+            heldHook.GetComponent<HingeJoint2D>().enabled = true;
+            heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count-1].GetComponent<Rigidbody2D>();
 
             //Move everything to its position??????
 
