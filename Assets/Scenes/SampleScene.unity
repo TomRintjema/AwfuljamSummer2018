@@ -12254,7 +12254,7 @@ MonoBehaviour:
     type: 2}
   hookPrefab: {fileID: 1315640637797482, guid: 25f2692771acce047a92b0950354d106, type: 2}
   hookPosition: {fileID: 591461771}
-  maxLinkLength: 3
+  maxLinkLength: 5
   fuelText: {fileID: 901401039}
   velocityText: {fileID: 1800926452}
 --- !u!50 &1458056782

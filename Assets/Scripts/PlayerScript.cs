@@ -220,6 +220,16 @@ public class PlayerScript : MonoBehaviour {
         //Make a new link where the highest link is
         //enable hinge, make parent of this link the ship
         //make parent of lower link this link
+        GameObject tempChainLink = Instantiate(chainLinkPrefab, hookPosition.transform.position, Quaternion.identity) as GameObject;
+        Debug.Log("Made a link");
+        tempChainLink.GetComponent<HingeJoint2D>().enabled = true;
+        GameObject lastLink = chainLinkList[chainLinkList.Count - 1];
+        tempChainLink.transform.parent = lastLink.transform.parent;
+        tempChainLink.GetComponent<HingeJoint2D>().connectedBody = lastLink.GetComponent<Rigidbody2D>();
+        chainLinkList.Add(tempChainLink);
+
+        heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count - 1].GetComponent<Rigidbody2D>();
+
     }
 
     void RaiseGrappler()
