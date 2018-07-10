@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject hookPrefab;
     public GameObject hookPosition;
     public int maxLinkLength;
+    public Transform explosionPrefab;
     List<GameObject> chainLinkList = new List<GameObject>();
     GameObject heldHook;
 
@@ -138,13 +139,23 @@ public class PlayerScript : MonoBehaviour {
     {
         if (collision.relativeVelocity.magnitude > hitStrength)
         {
-            Kaboom();
+            Debug.Log(collision.collider.tag);
+            if (collision.collider.tag != "Safe")
+            {
+                if (collision.collider.tag != "Hook")
+                {
+                    Kaboom();
+                }
+            }
         }
     }
 
     void Kaboom()
     {
         Debug.Log("YOU DEAD NOW!");
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
+
     }
 
    
