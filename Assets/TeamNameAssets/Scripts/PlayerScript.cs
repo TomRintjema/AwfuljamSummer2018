@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject hookPosition;
     public int maxLinkLength;
     public Transform explosionPrefab;
+    public float deadzone;
     List<GameObject> chainLinkList = new List<GameObject>();
     GameObject heldHook;
 
@@ -55,6 +56,21 @@ public class PlayerScript : MonoBehaviour {
             {
                 Rotate(-1);
             }
+            
+            float horiz = Input.GetAxis("Horizontal");
+            float verti = Input.GetAxis("Vertical");
+            horiz *= -1f;
+            verti *= -1f;
+
+            if (verti > deadzone)
+            {
+                Thrust(verti);
+            }
+
+            if ((horiz < -deadzone)  || (horiz > deadzone))
+            {
+                Rotate(horiz);
+            }
         }
 	}
 
@@ -82,16 +98,17 @@ public class PlayerScript : MonoBehaviour {
         UpdateVelocityText(velocityReadout);
     }
 
-    void Thrust(int direction)
+    void Thrust(float direction)
     {
         /*Vector3 vel = rb.velocity;
         vel += gameObject.transform.up * thrustSpeed * direction;
         rb.velocity = vel;*/
         if (currentFuel > 0)
         {
-            currentFuel -= rofThrust;
+            currentFuel -= rofThrust * direction;
             UpdateFuelText(currentFuel);
             rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
+            Debug.Log("Thrust Force " + thrustSpeed * direction * Time.deltaTime);
             engineParticleL.Play();
             engineParticleR.Play();
 
@@ -107,13 +124,14 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    void Rotate(int direction)
+    void Rotate(float direction)
     {
         //transform.Rotate(Vector3.forward * Time.deltaTime * direction * rotSpeed);
         if (currentFuel > 0)
         {
-            currentFuel -= rofRot;
+            currentFuel -= rofRot * direction;
             rb.AddTorque(direction * rotSpeed * Time.deltaTime);
+            Debug.Log("Rot force " + direction * rotSpeed * Time.deltaTime);
             if (direction > 0)
             {
                 engineParticleR.Play();

@@ -7832,6 +7832,11 @@ Prefab:
       propertyPath: velocityText
       value: 
       objectReference: {fileID: 1800926452}
+    - target: {fileID: 114295376680971774, guid: a7c927ba55f0e6e4285890c6e1c7c599,
+        type: 2}
+      propertyPath: deadzone
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7c927ba55f0e6e4285890c6e1c7c599, type: 2}
   m_IsPrefabParent: 0
