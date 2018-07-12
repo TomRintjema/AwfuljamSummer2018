@@ -60,12 +60,12 @@ public class PlayerScript : MonoBehaviour {
             FireGrappler();
         }
 
-        if (Input.GetButton("LowerGrappler"))
+        if (Input.GetButtonDown("LowerGrappler"))
         {
             LowerGrappler();
         }
 
-        if (Input.GetButton("RaiseGrappler"))
+        if (Input.GetButtonDown("RaiseGrappler"))
         {
             RaiseGrappler();
         }
@@ -266,6 +266,17 @@ public class PlayerScript : MonoBehaviour {
         //Make hook attach to higher link in chain
         //if chain is empty, link directly to ship
         //find lowest link, remove it
+        if (chainLinkList.Count > 1) {
+            heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count - 2].GetComponent<Rigidbody2D>();
+        } else
+        {
+            heldHook.GetComponent<HingeJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
+        }
+
+        GameObject lastLink = chainLinkList[chainLinkList.Count - 1];
+        chainLinkList.RemoveAt(chainLinkList.Count - 1);
+        Destroy(lastLink);
+
     }
     
     void RemoveHook()
