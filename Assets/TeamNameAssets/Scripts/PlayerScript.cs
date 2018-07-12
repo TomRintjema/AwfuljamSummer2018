@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
     Rigidbody2D rb;
+    public bool playerHasControl = false;
     public float thrustSpeed;
     public float rotSpeed;
     public float maxFuel;
@@ -36,20 +37,24 @@ public class PlayerScript : MonoBehaviour {
 	void FixedUpdate () {
         engineParticleL.Stop();
         engineParticleR.Stop();
-        if (Input.GetButton("Thrust"))
+        if (playerHasControl)
         {
-            Thrust(1);
-        //} else if (Input.GetKey(KeyCode.S)) {
-        //    Thrust(-1);
-        }
+            if (Input.GetButton("Thrust"))
+            {
+                Thrust(1);
+                //} else if (Input.GetKey(KeyCode.S)) {
+                //    Thrust(-1);
+            }
 
 
-		if (Input.GetButton("RotateLeft"))
-        {
-            Rotate(1);
-        } else if (Input.GetButton("RotateRight"))
-        {
-            Rotate(-1);
+            if (Input.GetButton("RotateLeft"))
+            {
+                Rotate(1);
+            }
+            else if (Input.GetButton("RotateRight"))
+            {
+                Rotate(-1);
+            }
         }
 	}
 
@@ -293,5 +298,10 @@ public class PlayerScript : MonoBehaviour {
     void UpdateVelocityText(float number)
     {
         velocityText.text = "" + number;
+    }
+
+    public void GivePlayerControl()
+    {
+        playerHasControl = true;
     }
 }
