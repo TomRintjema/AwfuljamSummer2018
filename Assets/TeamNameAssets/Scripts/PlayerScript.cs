@@ -286,6 +286,7 @@ public class PlayerScript : MonoBehaviour {
     
     void RemoveHook()
     {
+        heldHook.GetComponent<HookScript>().Detach();
         Destroy(heldHook);
         heldHook = null;
     }
