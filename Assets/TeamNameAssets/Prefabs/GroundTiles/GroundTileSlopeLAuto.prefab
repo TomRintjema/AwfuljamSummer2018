@@ -98,7 +98,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -1, y: -1}
       - {x: 1, y: -1}
-      - {x: -1, y: 1}
+      - {x: 1, y: 1}
 --- !u!114 &114591408061786896
 MonoBehaviour:
   m_ObjectHideFlags: 1
