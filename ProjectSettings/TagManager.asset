@@ -8,6 +8,7 @@ TagManager:
   - Hook
   - HookHudText
   - Safe
+  - MessageHudText
   layers:
   - Default
   - TransparentFX

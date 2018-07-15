@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212692431612616268}
   - component: {fileID: 58991804197748080}
   - component: {fileID: 50635552599165636}
+  - component: {fileID: 114835034120154224}
   m_Layer: 11
   m_Name: Rock
   m_TagString: Box
@@ -77,6 +78,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.85
+--- !u!114 &114835034120154224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438059601579612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c157a09b3ac783947ba8efcc7816e6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: rock
 --- !u!212 &212692431612616268
 SpriteRenderer:
   m_ObjectHideFlags: 1
