@@ -22184,7 +22184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalKey: rock
   hasMessage: 1
-  nextMessage: horse
+  nextMessage: Goal!
   hasGroup: 1
   group: {fileID: 1745472956}
 --- !u!61 &1601956860

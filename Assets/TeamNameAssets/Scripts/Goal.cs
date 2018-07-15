@@ -39,6 +39,7 @@ public class Goal : MonoBehaviour {
                 {
                     ShowGroup();
                 }
+                gameObject.SetActive(false);
             }
         }
     }
