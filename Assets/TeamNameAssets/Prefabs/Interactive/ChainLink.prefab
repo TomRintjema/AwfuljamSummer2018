@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4287001450371182}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: NextLink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 50074051354468042}
   - component: {fileID: 61424639477253140}
   - component: {fileID: 233434845540527450}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: ChainLink
   m_TagString: Safe
   m_Icon: {fileID: 0}

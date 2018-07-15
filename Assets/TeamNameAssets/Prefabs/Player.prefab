@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4828182326609136}
   - component: {fileID: 198097416540644276}
   - component: {fileID: 199667802339853228}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EngineParticleL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4281250237595596}
   - component: {fileID: 212085088493427532}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PixelShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4152169393122350}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: HookPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4527124610974492}
   - component: {fileID: 198496442828717420}
   - component: {fileID: 199404299865810616}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EngineParticleR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 50788349245056282}
   - component: {fileID: 114295376680971774}
   - component: {fileID: 61307602909837694}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5e22944c2dfbe44999077e95a3a647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHasControl: 0
   thrustSpeed: 1000
   rotSpeed: 800
   maxFuel: 1000
@@ -235,6 +236,7 @@ MonoBehaviour:
   maxLinkLength: 7
   explosionPrefab: {fileID: 4918323337734526, guid: f5cfab432d4b1de4994bfdef7b439b35,
     type: 2}
+  deadzone: 0
   fuelText: {fileID: 0}
   velocityText: {fileID: 0}
 --- !u!198 &198097416540644276
@@ -9446,7 +9448,7 @@ SpriteRenderer:
   m_SortingLayerID: -727675601
   m_SortingLayer: 2
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 58ff6dfb9b95cb4469cfc608c2d01691, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6283a8e34d5512418aae541846dfbc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

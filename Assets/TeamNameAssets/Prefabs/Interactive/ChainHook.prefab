@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 233349801468454986}
   - component: {fileID: 114822811711012366}
   - component: {fileID: 255969517124219052}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: ChainHook
   m_TagString: Hook
   m_Icon: {fileID: 0}
