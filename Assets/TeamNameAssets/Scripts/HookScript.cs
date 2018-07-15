@@ -44,12 +44,15 @@ internal class HookScript : MonoBehaviour {
 
     public void Detach()
     {
-        heldBox.transform.parent = null;
-        gameObject.GetComponent<FixedJoint2D>().connectedBody = null;
-        gameObject.GetComponent<FixedJoint2D>().enabled = false;
-        heldBox = null;
-        Debug.Log("Hook detached, Ready to arm");
-        hookDisplayText.text = "Disarmed";
+        if (heldBox != null)
+        {
+            heldBox.transform.parent = null;
+            gameObject.GetComponent<FixedJoint2D>().connectedBody = null;
+            gameObject.GetComponent<FixedJoint2D>().enabled = false;
+            heldBox = null;
+            Debug.Log("Hook detached, Ready to arm");
+            hookDisplayText.text = "Disarmed";
+        }
     }
 
 

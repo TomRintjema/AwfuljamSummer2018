@@ -15,14 +15,12 @@ public class PlayerScript : MonoBehaviour {
     public ParticleSystem engineParticleR;
     public ParticleSystem engineParticleL;
     public float hitStrength;
-    public GameObject chainLinkPrefab;
     public GameObject hookPrefab;
-    public GameObject hookPosition;
-    public int maxLinkLength;
     public Transform explosionPrefab;
+    public GameObject hookPosition;
     public float deadzone;
-    List<GameObject> chainLinkList = new List<GameObject>();
-    GameObject heldHook;
+    public GameObject masterHook;
+    public GameObject heldHook;
 
     //Hud Hooks
     public Text fuelText;
@@ -81,16 +79,6 @@ public class PlayerScript : MonoBehaviour {
             FireGrappler();
         }
 
-        if (Input.GetButtonDown("LowerGrappler"))
-        {
-            LowerGrappler();
-        }
-
-        if (Input.GetButtonDown("RaiseGrappler"))
-        {
-            RaiseGrappler();
-        }
-
         float velocityReadout = Vector2.Distance(Vector2.zero, rb.velocity);
         velocityReadout *= 100f;
         velocityReadout = Mathf.Round(velocityReadout);
@@ -108,7 +96,7 @@ public class PlayerScript : MonoBehaviour {
             currentFuel -= rofThrust * direction;
             UpdateFuelText(currentFuel);
             rb.AddForce(gameObject.transform.up * thrustSpeed * direction * Time.deltaTime);
-            Debug.Log("Thrust Force " + thrustSpeed * direction * Time.deltaTime);
+            //Debug.Log("Thrust Force " + thrustSpeed * direction * Time.deltaTime);
             engineParticleL.Play();
             engineParticleR.Play();
 
@@ -131,7 +119,7 @@ public class PlayerScript : MonoBehaviour {
         {
             currentFuel -= rofRot * direction;
             rb.AddTorque(direction * rotSpeed * Time.deltaTime);
-            Debug.Log("Rot force " + direction * rotSpeed * Time.deltaTime);
+            //Debug.Log("Rot force " + direction * rotSpeed * Time.deltaTime);
             if (direction > 0)
             {
                 engineParticleR.Play();
@@ -195,118 +183,25 @@ public class PlayerScript : MonoBehaviour {
         //If the hook is not out, make it fire out and give it like 3 chain links
         if (heldHook == null)
         {
-            //Make three chain links, separate them by some units
-            //Add each of the chain links to the chain link list
-            int numberLinkToCreate = 3;
-            for (int i = 0; i < numberLinkToCreate; i++) { 
-                GameObject tempChainLink = Instantiate(chainLinkPrefab, hookPosition.transform.position, Quaternion.identity) as GameObject;
-                Debug.Log("Made a link");
-                tempChainLink.GetComponent<HingeJoint2D>().enabled = true;
-                chainLinkList.Add(tempChainLink);
-            }
-            //Make the chain links enable their hinge joint
-            //Hook the chain links to the chain link above them
-            GameObject lastLink = gameObject;
-            foreach (GameObject chain in chainLinkList)
-            {
-                chain.transform.parent = lastLink.transform.parent;
-                chain.GetComponent<HingeJoint2D>().connectedBody = lastLink.GetComponent<Rigidbody2D>();
-                lastLink = chain;
-            }
-
-
-            //Fire the grappler
-            //First, Make the hook
-            heldHook = (GameObject)Instantiate(hookPrefab, hookPosition.transform.position, Quaternion.identity);
-
-            //Hook the hook to the lowest chain link
-            heldHook.GetComponent<HingeJoint2D>().enabled = true;
-            heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count-1].GetComponent<Rigidbody2D>();
-
-            //Move everything to its position??????
-
-        } else
-        {
-            //Arm/Disarm the grappler, since it's out
-            //This is on the hook so I don't have to worry about it here!
-            heldHook.GetComponent<HookScript>().ArmDisarm();
+            //Make Hook
+            masterHook = Instantiate(hookPrefab, hookPosition.transform.position, Quaternion.identity) as GameObject;
+            heldHook = GameObject.FindWithTag("Hook");
+            HingeJoint2D hj = masterHook.GetComponent<HingeJoint2D>();
+            hj.enabled = true;
+            hj.connectedBody = gameObject.GetComponent<Rigidbody2D>();
         }
-    }
+        else
+        {
+            //Destroy the hook
+            heldHook.GetComponent<HookScript>().Detach();
 
-    void LowerGrappler()
-    {
-        //If the hook doesn't exist, you can't lower the grappler
-        //If the list of chainlinks are < maxchainlength add a new chainlink, and hook the previous last to the newest
-        //if the list of chainlinks are >= maxchainlength, do nothing
-        if (heldHook == null)
-        {
-            //You can't lower the grappler if it's not out, you need to fire it.
-        } else if (chainLinkList.Count < maxLinkLength)
-        {
-            AddLinkToChain();
+
+            GameObject temp = masterHook;
+            masterHook = null;
+            heldHook = null;
+            Destroy(temp);
+            
         }
-    }
-
-    void AddLinkToChain()
-    {
-        //TODO: this
-        //Add new link to the chain
-        //Make a new link where the highest link is
-        //enable hinge, make parent of this link the ship
-        //make parent of lower link this link
-        GameObject tempChainLink = Instantiate(chainLinkPrefab, hookPosition.transform.position, Quaternion.identity) as GameObject;
-        Debug.Log("Made a link");
-        tempChainLink.GetComponent<HingeJoint2D>().enabled = true;
-        GameObject lastLink = chainLinkList[chainLinkList.Count - 1];
-        tempChainLink.transform.parent = lastLink.transform.parent;
-        tempChainLink.GetComponent<HingeJoint2D>().connectedBody = lastLink.GetComponent<Rigidbody2D>();
-        chainLinkList.Add(tempChainLink);
-
-        heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count - 1].GetComponent<Rigidbody2D>();
-
-    }
-
-    void RaiseGrappler()
-    {
-        //If the hook doesn't exist, Raising the hook does nothing
-        //If the list of chainlink's are 0, raising the grappler will retract the hook completely
-        //if the list of chainlinks are > 0, raising the grappler will remove the 0th, and make the 1st the new 0th more or less
-        if (heldHook == null)
-        {
-            //You can't raise the hook if it doesn't exist.
-        } else if (chainLinkList.Count == 0)
-        {
-            RemoveHook();
-        } else if (chainLinkList.Count > 0)
-        {
-            RemoveLink();
-        }
-    }
-
-    void RemoveLink()
-    {
-        //TODO: this
-        //Make hook attach to higher link in chain
-        //if chain is empty, link directly to ship
-        //find lowest link, remove it
-        if (chainLinkList.Count > 1) {
-            heldHook.GetComponent<HingeJoint2D>().connectedBody = chainLinkList[chainLinkList.Count - 2].GetComponent<Rigidbody2D>();
-        } else
-        {
-            heldHook.GetComponent<HingeJoint2D>().connectedBody = gameObject.GetComponent<Rigidbody2D>();
-        }
-
-        GameObject lastLink = chainLinkList[chainLinkList.Count - 1];
-        chainLinkList.RemoveAt(chainLinkList.Count - 1);
-        Destroy(lastLink);
-
-    }
-    
-    void RemoveHook()
-    {
-        heldHook.GetComponent<HookScript>().Detach();
-        Destroy(heldHook);
-        heldHook = null;
     }
 
     void UpdateFuelText(float number)
