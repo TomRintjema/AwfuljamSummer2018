@@ -14,8 +14,10 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        gameObject.transform.position = new Vector3(playerShip.transform.position.x, playerShip.transform.position.y, -10);
-        //gameObject.transform.position = new Vector3(playerShip.transform.position.x + playerRididbody2D.velocity.x, playerShip.transform.position.y + playerRididbody2D.velocity.y, -10);
+        if (playerShip != null)
+        {
+            gameObject.transform.position = new Vector3(playerShip.transform.position.x, playerShip.transform.position.y, -10);
+            //gameObject.transform.position = new Vector3(playerShip.transform.position.x + playerRididbody2D.velocity.x, playerShip.transform.position.y + playerRididbody2D.velocity.y, -10);
+        }
     }
 }
