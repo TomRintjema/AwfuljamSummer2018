@@ -212,7 +212,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4388135878451596, guid: 799d7ff81f955da4dbfc532cc8d13191, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 799d7ff81f955da4dbfc532cc8d13191, type: 2}
@@ -8724,12 +8724,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604444115}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 2117218628}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &605760229 stripped
 Transform:
@@ -11035,6 +11035,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e84644f34d264fa48a7983be229c01b1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &835863982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 835863983}
+  m_Layer: 0
+  m_Name: Goals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &835863983
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835863982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1601956861}
+  - {fileID: 2117218628}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &838439409 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4208246118731150, guid: e84644f34d264fa48a7983be229c01b1,
@@ -13016,6 +13046,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1033302756452166, guid: 187870d5640722b41b364b64e8f02816, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 187870d5640722b41b364b64e8f02816, type: 2}
   m_IsPrefabParent: 0
@@ -13346,8 +13380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSettings: {fileID: 11400000, guid: f0eb3fc789dd1a341a1d1f2bda70c1f6, type: 2}
-  titleMusic: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
-  mainMusic: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
+  titleMusic: {fileID: 8300000, guid: 6eebb03c0a8a7984e9081fc0e2b35d7d, type: 3}
+  mainMusic: {fileID: 8300000, guid: 6eebb03c0a8a7984e9081fc0e2b35d7d, type: 3}
   volumeDown: {fileID: 24519918, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
   volumeUp: {fileID: 24500003, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
 --- !u!82 &1013497326
@@ -13361,7 +13395,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24324684, guid: 0ac7fb39e445048d89688f69c2a1839a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7db0c87ec4fdb0e48af04349c4f14df9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6eebb03c0a8a7984e9081fc0e2b35d7d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -18201,7 +18235,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1055133224776088, guid: cc47bb9d454c68f4998d2c6d27f0b2a5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc47bb9d454c68f4998d2c6d27f0b2a5, type: 2}
@@ -19194,12 +19228,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1384711726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 2117218628}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1385025308
 Prefab:
@@ -22204,9 +22238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalKey: rock
   hasMessage: 1
-  nextMessage: Goal!
+  nextMessage: Goal! Now we need the container moved to the platform
   hasGroup: 1
-  group: {fileID: 1745472956}
+  group: {fileID: 2117218627}
 --- !u!61 &1601956860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22238,14 +22272,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1601956858}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1029914638}
   - {fileID: 720658542}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 835863983}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1603148061
 Prefab:
@@ -23938,11 +23972,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e84644f34d264fa48a7983be229c01b1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1745472956 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1055133224776088, guid: cc47bb9d454c68f4998d2c6d27f0b2a5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1322283462}
 --- !u!1001 &1749413969
 Prefab:
   m_ObjectHideFlags: 0
@@ -24454,7 +24483,7 @@ MonoBehaviour:
 
     Welcome Horse Pilot!
 
-    Use your ship to move the container to the platform'
+    Move the rock to the goal, between the cones'
 --- !u!222 &1785176956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28352,6 +28381,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f7c14f840dafbf40a0cfd4a90e442f0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2117218627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2117218628}
+  m_Layer: 0
+  m_Name: Goal2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2117218628
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117218627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 604444117}
+  - {fileID: 1384711728}
+  m_Father: {fileID: 835863983}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2118189589
 Prefab:
   m_ObjectHideFlags: 0
