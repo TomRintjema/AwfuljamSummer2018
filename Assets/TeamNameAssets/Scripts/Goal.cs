@@ -9,9 +9,12 @@ public class Goal : MonoBehaviour {
     public string nextMessage = "horse";
     public bool hasGroup = true;
     public GameObject group;
+    public bool giveFuel = false;
+    public float fuelAmount = 100000f;
     private bool hasTriggered = false;
     private Text messageDisplayText;
     private GameObject messageDisplay;
+    
 
     // Use this for initialization
     void Start () {
@@ -38,6 +41,13 @@ public class Goal : MonoBehaviour {
                 if (hasGroup)
                 {
                     ShowGroup();
+                }
+                if (giveFuel)
+                {
+                    if (other.gameObject.GetComponent<PlayerScript>() != null)
+                    {
+                        other.gameObject.GetComponent<PlayerScript>().GiveFuel(fuelAmount);
+                    }
                 }
                 gameObject.SetActive(false);
             }

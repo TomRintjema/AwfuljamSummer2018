@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 50788349245056282}
   - component: {fileID: 114295376680971774}
   - component: {fileID: 61307602909837694}
+  - component: {fileID: 114312719230826286}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410588618216786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4609147875494482}
@@ -140,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777020566568354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.9849997, z: 0}
+  m_LocalPosition: {x: 0, y: 5.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4281250237595596}
@@ -229,16 +230,27 @@ MonoBehaviour:
   engineParticleR: {fileID: 198496442828717420}
   engineParticleL: {fileID: 198097416540644276}
   hitStrength: 5
-  chainLinkPrefab: {fileID: 1730554371827102, guid: 55c9e5e3d02b88a4cb6dd7d13ca63779,
-    type: 2}
-  hookPrefab: {fileID: 1315640637797482, guid: 25f2692771acce047a92b0950354d106, type: 2}
-  hookPosition: {fileID: 1410588618216786}
-  maxLinkLength: 7
+  hookPrefab: {fileID: 1973204816088418, guid: fb55f27cf20b482439be4cb8eeab38d3, type: 2}
   explosionPrefab: {fileID: 4918323337734526, guid: f5cfab432d4b1de4994bfdef7b439b35,
     type: 2}
+  hookPosition: {fileID: 1410588618216786}
   deadzone: 0
+  masterHook: {fileID: 0}
+  heldHook: {fileID: 0}
   fuelText: {fileID: 0}
   velocityText: {fileID: 0}
+--- !u!114 &114312719230826286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777020566568354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c157a09b3ac783947ba8efcc7816e6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: player
 --- !u!198 &198097416540644276
 ParticleSystem:
   m_ObjectHideFlags: 1

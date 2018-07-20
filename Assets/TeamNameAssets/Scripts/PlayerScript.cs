@@ -21,7 +21,8 @@ public class PlayerScript : MonoBehaviour {
     public float deadzone;
     public GameObject masterHook;
     public GameObject heldHook;
-
+    private AudioSource engineSound;
+    
     //Hud Hooks
     public Text fuelText;
     public Text velocityText;
@@ -30,6 +31,7 @@ public class PlayerScript : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         UpdateFuelText(currentFuel);
+        engineSound = GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame
@@ -99,6 +101,11 @@ public class PlayerScript : MonoBehaviour {
             //Debug.Log("Thrust Force " + thrustSpeed * direction * Time.deltaTime);
             engineParticleL.Play();
             engineParticleR.Play();
+            if (engineSound.isPlaying == false)
+            {
+                engineSound.Play();
+            }
+            
 
 
             if (currentFuel < 0)
@@ -117,7 +124,13 @@ public class PlayerScript : MonoBehaviour {
         //transform.Rotate(Vector3.forward * Time.deltaTime * direction * rotSpeed);
         if (currentFuel > 0)
         {
-            currentFuel -= rofRot * direction;
+            if (engineSound.isPlaying == false)
+            {
+                engineSound.Play();
+            }
+
+            currentFuel -= rofRot * Mathf.Abs(direction);
+            UpdateFuelText(currentFuel);
             rb.AddTorque(direction * rotSpeed * Time.deltaTime);
             //Debug.Log("Rot force " + direction * rotSpeed * Time.deltaTime);
             if (direction > 0)
@@ -200,8 +213,8 @@ public class PlayerScript : MonoBehaviour {
             masterHook = null;
             heldHook = null;
             Destroy(temp);
-            
-        }
+
+            }
     }
 
     void UpdateFuelText(float number)
@@ -217,5 +230,11 @@ public class PlayerScript : MonoBehaviour {
     public void GivePlayerControl()
     {
         playerHasControl = true;
+    }
+
+    public void GiveFuel(float fuelToGive)
+    {
+        currentFuel = fuelToGive;
+        UpdateFuelText(currentFuel);
     }
 }
