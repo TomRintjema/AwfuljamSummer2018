@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -742,6 +742,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4579739162678522, guid: 4f7c14f840dafbf40a0cfd4a90e442f0,
     type: 2}
   m_PrefabInternal: {fileID: 1353161145}
+--- !u!4 &73321953 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4838964748287754, guid: 2b0c1655739c642478f46a9bb634b037,
+    type: 2}
+  m_PrefabInternal: {fileID: 678683847}
 --- !u!224 &75472576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1864,7 +1869,7 @@ Transform:
   - {fileID: 1252234744}
   - {fileID: 892172567}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &136528362
 Prefab:
@@ -11377,7 +11382,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1492232484}
     m_Modifications:
     - target: {fileID: 4838964748287754, guid: 2b0c1655739c642478f46a9bb634b037, type: 2}
       propertyPath: m_LocalPosition.x
@@ -11409,7 +11414,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4838964748287754, guid: 2b0c1655739c642478f46a9bb634b037, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b0c1655739c642478f46a9bb634b037, type: 2}
@@ -13373,7 +13378,7 @@ Transform:
   - {fileID: 234546169}
   - {fileID: 1663169040}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &838439409 stripped
 Transform:
@@ -16104,7 +16109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSettingsData: {fileID: 11400000, guid: f0eb3fc789dd1a341a1d1f2bda70c1f6, type: 2}
-  sceneToStart: 0
+  sceneToStart: 1
   changeScenes: 0
   changeMusicOnStart: 0
   fadeOutImageCanvasGroup: {fileID: 506664686}
@@ -16140,7 +16145,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24324684, guid: 0ac7fb39e445048d89688f69c2a1839a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0df954c129ac76747bfd97bc2b73370c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -18740,7 +18745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4609147875494482, guid: a7c927ba55f0e6e4285890c6e1c7c599, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114295376680971774, guid: a7c927ba55f0e6e4285890c6e1c7c599,
         type: 2}
@@ -21635,7 +21640,7 @@ Transform:
   m_Children:
   - {fileID: 1287209340}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1320213899 stripped
 Transform:
@@ -24356,8 +24361,9 @@ Transform:
   - {fileID: 835458118}
   - {fileID: 932211490}
   - {fileID: 646862116}
+  - {fileID: 73321953}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494006165
 Prefab:
@@ -29917,7 +29923,7 @@ Transform:
   - {fileID: 75472576}
   - {fileID: 1077703498}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1849922038
 Prefab:

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TeamNameAssets/Scenes/MusicLoad.unity
+    guid: 7393faa90186e1b4d9c67ea567fc7c9f
+  - enabled: 1
     path: Assets/TeamNameAssets/Scenes/SampleScene.unity
     guid: 8c996177e7541d74e83f4730cc4c4d97
   m_configObjects: {}
