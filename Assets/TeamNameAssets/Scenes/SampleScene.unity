@@ -5649,10 +5649,10 @@ RectTransform:
   m_Father: {fileID: 1805169527}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 160, y: -19}
-  m_SizeDelta: {x: -148.62857, y: -83.13187}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.95, y: 1}
+  m_AnchoredPosition: {x: 0, y: -19}
+  m_SizeDelta: {x: 0, y: -83.13187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368126533
 MonoBehaviour:
@@ -16125,8 +16125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSettings: {fileID: 11400000, guid: f0eb3fc789dd1a341a1d1f2bda70c1f6, type: 2}
-  titleMusic: {fileID: 8300000, guid: 0df954c129ac76747bfd97bc2b73370c, type: 3}
-  mainMusic: {fileID: 8300000, guid: 0df954c129ac76747bfd97bc2b73370c, type: 3}
+  titleMusic: {fileID: 0}
+  mainMusic: {fileID: 0}
   volumeDown: {fileID: 24519918, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
   volumeUp: {fileID: 24500003, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
 --- !u!82 &1013497326
@@ -20980,8 +20980,8 @@ Transform:
   - {fileID: 1756631265}
   - {fileID: 2627753}
   - {fileID: 1184111461}
-  - {fileID: 1867004160}
   - {fileID: 844216762}
+  - {fileID: 1867004160}
   m_Father: {fileID: 1319349915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
