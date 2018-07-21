@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject heldHook;
     private AudioSource engineSound;
     public string deathMessage = "You fucked up son!";
+    private Animator messageAnimator;
 
     
     //Hud Hooks
@@ -186,6 +187,8 @@ public class PlayerScript : MonoBehaviour {
         messageDisplay = GameObject.FindWithTag("MessageHudText");
         messageDisplayText = messageDisplay.GetComponent(typeof(Text)) as Text;
         messageDisplayText.text = deathMessage;
+        messageAnimator = messageDisplay.GetComponentInParent<Animator>();
+        messageAnimator.SetTrigger("NewMessage");
         Destroy(gameObject);
 
     }

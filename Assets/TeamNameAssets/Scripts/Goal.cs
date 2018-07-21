@@ -14,6 +14,7 @@ public class Goal : MonoBehaviour {
     private bool hasTriggered = false;
     private Text messageDisplayText;
     private GameObject messageDisplay;
+    private Animator messageAnimator;
     private Text fuelText;
     private GameObject fuelDisplay;
     private Text foodText;
@@ -81,6 +82,8 @@ public class Goal : MonoBehaviour {
         messageDisplay = GameObject.FindWithTag("MessageHudText");
         messageDisplayText = messageDisplay.GetComponent(typeof(Text)) as Text;
         messageDisplayText.text = nextMessage;
+        messageAnimator = messageDisplay.GetComponentInParent<Animator>();
+        messageAnimator.SetTrigger("NewMessage");
     }
 
     void UpdateFuelRate()
