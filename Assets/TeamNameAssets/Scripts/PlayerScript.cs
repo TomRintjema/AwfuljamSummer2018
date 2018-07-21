@@ -8,7 +8,6 @@ public class PlayerScript : MonoBehaviour {
     public bool playerHasControl = false;
     public float thrustSpeed;
     public float rotSpeed;
-    public float maxFuel;
     public float currentFuel;
     public float rofThrust; //Rate of fuel loss on thrusting
     public float rofRot; //Rate of fuel loss on rotating
