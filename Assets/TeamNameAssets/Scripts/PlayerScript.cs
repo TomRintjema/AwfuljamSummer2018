@@ -89,6 +89,8 @@ public class PlayerScript : MonoBehaviour {
         velocityReadout = Mathf.Round(velocityReadout);
         //velocityReadout *= 0.1f;
         UpdateVelocityText(velocityReadout);
+
+        if (transform.position.y < 0f) { Kaboom(); }
     }
 
     void Thrust(float direction)
