@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -18761,6 +18761,11 @@ Prefab:
         type: 2}
       propertyPath: currentFuel
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295376680971774, guid: a7c927ba55f0e6e4285890c6e1c7c599,
+        type: 2}
+      propertyPath: rotSpeed
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7c927ba55f0e6e4285890c6e1c7c599, type: 2}
