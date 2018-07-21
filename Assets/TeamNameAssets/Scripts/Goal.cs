@@ -14,6 +14,22 @@ public class Goal : MonoBehaviour {
     private bool hasTriggered = false;
     private Text messageDisplayText;
     private GameObject messageDisplay;
+    private Text fuelText;
+    private GameObject fuelDisplay;
+    private Text foodText;
+    private GameObject foodDisplay;
+    private Text horsesText;
+    private GameObject horsesDisplay;
+    private Text mutText;
+    private GameObject mutDisplay;
+    public bool updateFuelRate = false;
+    public int fuelRate = 100;
+    public bool updateFoodRate = false;
+    public int foodRate = 100;
+    public bool updateHorsesRate = false;
+    public int horsesRate = 100;
+    public bool updateMutRate = false;
+    public int mutRate = 100;
     
 
     // Use this for initialization
@@ -49,6 +65,12 @@ public class Goal : MonoBehaviour {
                         other.gameObject.GetComponent<PlayerScript>().GiveFuel(fuelAmount);
                     }
                 }
+
+                if (updateFuelRate) { UpdateFuelRate(); }
+                if (updateFoodRate) { UpdateFoodRate(); }
+                if (updateHorsesRate) { UpdateHorsesRate(); }
+                if (updateMutRate) { UpdateMutRate(); }
+
                 gameObject.SetActive(false);
             }
         }
@@ -59,6 +81,34 @@ public class Goal : MonoBehaviour {
         messageDisplay = GameObject.FindWithTag("MessageHudText");
         messageDisplayText = messageDisplay.GetComponent(typeof(Text)) as Text;
         messageDisplayText.text = nextMessage;
+    }
+
+    void UpdateFuelRate()
+    {
+        fuelDisplay = GameObject.FindWithTag("FuelProdHudText");
+        fuelText = fuelDisplay.GetComponent(typeof(Text)) as Text;
+        fuelText.text = "" + fuelRate;
+    }
+
+    void UpdateFoodRate()
+    {
+        foodDisplay = GameObject.FindWithTag("FoodProdHudText");
+        foodText = foodDisplay.GetComponent(typeof(Text)) as Text;
+        foodText.text = "" + foodRate;
+    }
+
+    void UpdateHorsesRate()
+    {
+        horsesDisplay = GameObject.FindWithTag("HorsesProdHudText");
+        horsesText = horsesDisplay.GetComponent(typeof(Text)) as Text;
+        horsesText.text = "" + horsesRate;
+    }
+
+    void UpdateMutRate()
+    {
+        mutDisplay = GameObject.FindWithTag("MutProdHudText");
+        mutText = mutDisplay.GetComponent(typeof(Text)) as Text;
+        mutText.text = "" + mutRate;
     }
 
     void ShowGroup()

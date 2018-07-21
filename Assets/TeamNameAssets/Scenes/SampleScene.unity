@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 75676518}
   m_Layer: 5
   m_Name: MutationsProductionRate
-  m_TagString: Untagged
+  m_TagString: MutProdHudText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6736,7 +6736,7 @@ GameObject:
   - component: {fileID: 420517748}
   m_Layer: 5
   m_Name: FuelProductionRate
-  m_TagString: Untagged
+  m_TagString: FuelProdHudText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18102,7 +18102,7 @@ GameObject:
   - component: {fileID: 1132822827}
   m_Layer: 5
   m_Name: FoodProductionRate
-  m_TagString: Untagged
+  m_TagString: FoodProdHudText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24156,6 +24156,11 @@ Prefab:
       propertyPath: group
       value: 
       objectReference: {fileID: 234546170}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateFuelRate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
   m_IsPrefabParent: 0
@@ -24510,6 +24515,26 @@ Prefab:
         type: 2}
       propertyPath: nextMessage
       value: Goal! You passed your flight test! Fuel up and get to work!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateFuelRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateFoodRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateHorsesRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateMutRate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
@@ -32711,7 +32736,7 @@ GameObject:
   - component: {fileID: 2038832323}
   m_Layer: 5
   m_Name: HorsesProductionRate
-  m_TagString: Untagged
+  m_TagString: HorsesProdHudText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33657,6 +33682,14 @@ MonoBehaviour:
   group: {fileID: 1473933470}
   giveFuel: 1
   fuelAmount: 1100
+  updateFuelRate: 0
+  fuelRate: 100
+  updateFoodRate: 0
+  foodRate: 100
+  updateHorsesRate: 0
+  horsesRate: 100
+  updateMutRate: 0
+  mutRate: 100
 --- !u!61 &2117218630
 BoxCollider2D:
   m_ObjectHideFlags: 0

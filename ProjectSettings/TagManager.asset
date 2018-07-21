@@ -9,6 +9,10 @@ TagManager:
   - HookHudText
   - Safe
   - MessageHudText
+  - FuelProdHudText
+  - FoodProdHudText
+  - HorsesProdHudText
+  - MutProdHudText
   layers:
   - Default
   - TransparentFX
