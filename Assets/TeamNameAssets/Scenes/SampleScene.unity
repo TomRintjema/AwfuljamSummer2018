@@ -626,6 +626,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4208246118731150, guid: e84644f34d264fa48a7983be229c01b1,
     type: 2}
   m_PrefabInternal: {fileID: 106106578}
+--- !u!1 &52004657 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1782313134667672, guid: fdbee1886fe96314d9550dd159af7722,
+    type: 2}
+  m_PrefabInternal: {fileID: 818585844}
 --- !u!4 &53396960 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4579739162678522, guid: 4f7c14f840dafbf40a0cfd4a90e442f0,
@@ -1463,7 +1468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1782313134667672, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
@@ -14556,6 +14561,106 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e84644f34d264fa48a7983be229c01b1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &818585844
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 835863983}
+    m_Modifications:
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782313134667672, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_Name
+      value: Goal10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: goalKey
+      value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: hasGroup
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: nextMessage
+      value: You win! Horses will be able to take over the universe!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782313134667672, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: giveFuel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: fuelAmount
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateFoodRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateHorsesRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: group
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
+        type: 2}
+      propertyPath: updateMutRate
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &818585845 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4890127743897172, guid: fdbee1886fe96314d9550dd159af7722,
+    type: 2}
+  m_PrefabInternal: {fileID: 818585844}
 --- !u!1001 &820513374
 Prefab:
   m_ObjectHideFlags: 0
@@ -14867,6 +14972,7 @@ Transform:
   - {fileID: 127963342}
   - {fileID: 96571705}
   - {fileID: 1619110696}
+  - {fileID: 818585845}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25082,6 +25188,57 @@ Transform:
   m_PrefabParentObject: {fileID: 4770214549887240, guid: b8ea2e597f8c62c46900b955b06b5ff0,
     type: 2}
   m_PrefabInternal: {fileID: 393728635}
+--- !u!1001 &1166584849
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1492232484}
+    m_Modifications:
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436196137458034, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+      propertyPath: m_Name
+      value: FuelDepot (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1166584850 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4700914241916690, guid: 8ec7deaecd8c2f94aaa28911f5ca63e7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1166584849}
 --- !u!1001 &1166670350
 Prefab:
   m_ObjectHideFlags: 0
@@ -31054,6 +31211,7 @@ Transform:
   - {fileID: 729975038}
   - {fileID: 1303107761}
   - {fileID: 330225035}
+  - {fileID: 1166584850}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33443,12 +33601,12 @@ Prefab:
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
       propertyPath: hasGroup
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
       propertyPath: nextMessage
-      value: Excellent! Our genetics program can get underway!
+      value: Excellent! Our genetics program can get underway! Fuel up!
       objectReference: {fileID: 0}
     - target: {fileID: 1782313134667672, guid: fdbee1886fe96314d9550dd159af7722, type: 2}
       propertyPath: m_IsActive
@@ -33478,7 +33636,7 @@ Prefab:
         type: 2}
       propertyPath: group
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 52004657}
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
       propertyPath: updateMutRate
