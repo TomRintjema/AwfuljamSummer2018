@@ -21,10 +21,14 @@ public class PlayerScript : MonoBehaviour {
     public GameObject masterHook;
     public GameObject heldHook;
     private AudioSource engineSound;
+    public string deathMessage = "You fucked up son!";
+
     
     //Hud Hooks
     public Text fuelText;
     public Text velocityText;
+    private Text messageDisplayText;
+    private GameObject messageDisplay;
 
     // Use this for initialization
     void Start () {
@@ -177,6 +181,9 @@ public class PlayerScript : MonoBehaviour {
     {
         Debug.Log("YOU DEAD NOW!");
         Instantiate(explosionPrefab, transform.position, transform.rotation);
+        messageDisplay = GameObject.FindWithTag("MessageHudText");
+        messageDisplayText = messageDisplay.GetComponent(typeof(Text)) as Text;
+        messageDisplayText.text = deathMessage;
         Destroy(gameObject);
 
     }

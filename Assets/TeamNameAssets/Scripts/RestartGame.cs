@@ -10,6 +10,14 @@ public class RestartGame : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
+    private void Update()
+    {
+        if (Input.GetButton("Reload"))
+        {
+            ReloadMenu();
+        }
+    }
+
     public void ReloadMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

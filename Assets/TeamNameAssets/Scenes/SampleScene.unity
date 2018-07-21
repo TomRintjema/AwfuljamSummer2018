@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6043,8 +6043,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "W to thrust up\nA and D to rotate ship\nSpacebar to arm or disarm hook\n\nGame:
-    @TomRintjema\nGame: @ForerSa    \nMusic: @visagermusic"
+  m_Text: "W to thrust up\nA and D to rotate ship\nSpacebar to arm or disarm hook\nR
+    to restart game\n\nGame: @TomRintjema\nGame: @ForerSa    \nMusic: @visagermusic"
 --- !u!222 &368126534
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25140,6 +25140,16 @@ Prefab:
         type: 2}
       propertyPath: rotSpeed
       value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295376680971774, guid: a7c927ba55f0e6e4285890c6e1c7c599,
+        type: 2}
+      propertyPath: deathMessage
+      value: You have died!      Press R to restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 61307602909837694, guid: a7c927ba55f0e6e4285890c6e1c7c599,
+        type: 2}
+      propertyPath: m_UsedByComposite
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7c927ba55f0e6e4285890c6e1c7c599, type: 2}
