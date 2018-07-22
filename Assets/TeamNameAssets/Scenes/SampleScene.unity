@@ -3899,7 +3899,7 @@ Prefab:
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
       propertyPath: fuelAmount
-      value: 1500
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 114857056478676336, guid: fdbee1886fe96314d9550dd159af7722,
         type: 2}
@@ -9660,6 +9660,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.25943398
       objectReference: {fileID: 0}
+    - target: {fileID: 50635552599165636, guid: 799d7ff81f955da4dbfc532cc8d13191,
+        type: 2}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 799d7ff81f955da4dbfc532cc8d13191, type: 2}
   m_IsPrefabParent: 0
@@ -9733,7 +9738,7 @@ Camera:
   m_TargetTexture: {fileID: 8400000, guid: ad7576ecc9b59c842b0cf431c5fcc0b3, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
