@@ -42,9 +42,11 @@ public class StartOptions : MonoBehaviour {
 
 	public void StartButtonClicked()
 	{
-		//If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
-		//To change fade time, change length of animation "FadeToColor"
-		if (menuSettingsData.musicLoopToChangeTo != null) 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        //If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
+        //To change fade time, change length of animation "FadeToColor"
+        if (menuSettingsData.musicLoopToChangeTo != null) 
 		{
 			playMusic.FadeDown(menuSettingsData.menuFadeTime);
 		}
