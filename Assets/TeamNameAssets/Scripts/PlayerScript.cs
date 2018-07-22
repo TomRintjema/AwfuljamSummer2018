@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour {
     public string deathMessage = "You fucked up son!";
     private Animator messageAnimator;
 
-    
+
     //Hud Hooks
     public Text fuelText;
     public Text velocityText;
@@ -32,14 +32,14 @@ public class PlayerScript : MonoBehaviour {
     private GameObject messageDisplay;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         rb = GetComponent<Rigidbody2D>();
         UpdateFuelText(currentFuel);
-        engineSound = GetComponent<AudioSource> ();
+        engineSound = GetComponent<AudioSource>();
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    // Update is called once per frame
+    void FixedUpdate() {
         engineParticleL.Stop();
         engineParticleR.Stop();
         if (playerHasControl)
@@ -60,7 +60,7 @@ public class PlayerScript : MonoBehaviour {
             {
                 Rotate(-1);
             }
-            
+            /*
             float horiz = Input.GetAxis("Horizontal");
             float verti = Input.GetAxis("Vertical");
             horiz *= -1f;
@@ -71,20 +71,23 @@ public class PlayerScript : MonoBehaviour {
                 Thrust(verti);
             }
 
-            if ((horiz < -deadzone)  || (horiz > deadzone))
+            if ((horiz < -deadzone) || (horiz > deadzone))
             {
                 Rotate(horiz);
             }
+            */
         }
-	}
+    }
 
     private void Update()
     {
-        if (Input.GetButtonDown("FireGrappler"))
+        if (playerHasControl)
         {
-            FireGrappler();
+            if (Input.GetButtonDown("FireGrappler"))
+            {
+                FireGrappler();
+            }
         }
-
         float velocityReadout = Vector2.Distance(Vector2.zero, rb.velocity);
         velocityReadout *= 100f;
         velocityReadout = Mathf.Round(velocityReadout);
@@ -92,7 +95,9 @@ public class PlayerScript : MonoBehaviour {
         UpdateVelocityText(velocityReadout);
 
         if (transform.position.y < 0f) { Kaboom(); }
+        
     }
+
 
     void Thrust(float direction)
     {
