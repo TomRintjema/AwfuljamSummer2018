@@ -37,7 +37,10 @@ public class StartOptions : MonoBehaviour {
         menuCanvasGroup = GetComponent<CanvasGroup>();
 
         fadeImage.color = menuSettingsData.sceneChangeFadeColor;
-	}
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
 
 	public void StartButtonClicked()
