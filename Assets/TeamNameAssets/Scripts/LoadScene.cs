@@ -9,6 +9,6 @@ public class LoadScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
