@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour {
     private AudioSource engineSound;
     public string deathMessage = "You fucked up son!";
     private Animator messageAnimator;
+    private bool hasThrusted = false;
 
 
     //Hud Hooks
@@ -47,6 +48,7 @@ public class PlayerScript : MonoBehaviour {
             if (Input.GetButton("Thrust"))
             {
                 Thrust(1);
+                hasThrusted = true;
                 //} else if (Input.GetKey(KeyCode.S)) {
                 //    Thrust(-1);
             }
@@ -85,7 +87,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (Input.GetButtonDown("FireGrappler"))
             {
-                FireGrappler();
+                if (hasThrusted) { FireGrappler(); }
             }
         }
         float velocityReadout = Vector2.Distance(Vector2.zero, rb.velocity);
