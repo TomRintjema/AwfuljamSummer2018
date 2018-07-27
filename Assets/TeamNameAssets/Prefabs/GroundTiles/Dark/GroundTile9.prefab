@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4363790791561256}
   - component: {fileID: 212628143198936950}
   - component: {fileID: 61946582129570088}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: GroundTile9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987688261888070}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: b954f3313fbcd6342971aa2b1c7b53d9, type: 2}
+  - {fileID: 2100000, guid: a761f3996808fb843bbdf897694fcd84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,9 +98,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -727675601
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 591552977
+  m_SortingLayer: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3f952a9aeee7de24397d71619dd61445, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
