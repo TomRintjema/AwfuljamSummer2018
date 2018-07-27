@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
+    public float maxX = 100f;
+    public float minX = -100f;
+
     GameObject playerShip;
+    
     //private Rigidbody2D playerRididbody2D;
 
 	// Use this for initialization
@@ -16,7 +20,10 @@ public class CameraScript : MonoBehaviour {
 	void Update () {
         if (playerShip != null)
         {
-            gameObject.transform.position = new Vector3(playerShip.transform.position.x, playerShip.transform.position.y, -10);
+            Vector3 posNew = new Vector3(playerShip.transform.position.x, playerShip.transform.position.y, -10);
+            if (posNew.x > maxX) { posNew.x = maxX; }
+            if (posNew.x < minX) { posNew.x = minX; }
+            gameObject.transform.position = posNew;
             //gameObject.transform.position = new Vector3(playerShip.transform.position.x + playerRididbody2D.velocity.x, playerShip.transform.position.y + playerRididbody2D.velocity.y, -10);
         }
     }

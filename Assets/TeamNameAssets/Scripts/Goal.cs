@@ -24,13 +24,13 @@ public class Goal : MonoBehaviour {
     private Text mutText;
     private GameObject mutDisplay;
     public bool updateFuelRate = false;
-    public int fuelRate = 100;
+    public string fuelRate = "100";
     public bool updateFoodRate = false;
-    public int foodRate = 100;
+    public string foodRate = "100";
     public bool updateHorsesRate = false;
-    public int horsesRate = 100;
+    public string horsesRate = "100";
     public bool updateMutRate = false;
-    public int mutRate = 100;
+    public string mutRate = "100";
     
 
     // Use this for initialization
