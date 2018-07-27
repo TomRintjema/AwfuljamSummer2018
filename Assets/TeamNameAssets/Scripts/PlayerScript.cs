@@ -24,11 +24,13 @@ public class PlayerScript : MonoBehaviour {
     public string deathMessage = "You fucked up son!";
     private Animator messageAnimator;
     private bool hasThrusted = false;
+    public float score = 0;
 
 
     //Hud Hooks
     public Text fuelText;
     public Text velocityText;
+    public Text scoreText;
     private Text messageDisplayText;
     private GameObject messageDisplay;
 
@@ -252,6 +254,8 @@ public class PlayerScript : MonoBehaviour {
 
     public void GiveFuel(float fuelToGive)
     {
+        score += currentFuel;
+        scoreText.text = "" + score;
         currentFuel = fuelToGive;
         UpdateFuelText(currentFuel);
     }
